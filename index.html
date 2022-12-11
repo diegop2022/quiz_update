@@ -17,25 +17,34 @@
     </header>
 
     <main>
+
         <section id="questions">
-            <h1 id="question"></h1>
-            <button id="option1"></button>
-            <button id="option2"></button>
-            <button id="option3"></button>
-            <button id="option4"></button>
+            <div id="questionTitle">
+                <h1 id="question"></h1>
+            </div>
+            <div id="options">
+                <button id="option1"></button>
+                <button id="option2"></button>
+                <button id="option3"></button>
+                <button id="option4"></button>
+            </div>
         </section>
 
-        <button id="start">Start Quiz</button>
+        <div id="startbtn" class="startbtn">
+            <button id="start">Start Quiz</button>
+        </div>
 
         <section id="highscore">
             <h1>Your score was: </h1>
             <h1 id="score"></h1>
-            <label>Initials</label>
+            <label id="highscore-input">Initials</label>
             <input type="text" id="initials">
             <button id="submit">Submit</button>
         </section>
 
-        <button id="home">Return Home</button>
+        <div id="container">
+            <button id="home">Return Home</button>
+        </div>
     </main>
 
     <footer>

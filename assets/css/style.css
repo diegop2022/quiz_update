@@ -21,10 +21,110 @@ body {
     min-height: 100vh;
 }
 
-
 footer {
     position: sticky;
     top: 100%;
     text-align: center;
     background-color: rgb(43, 42, 42);
+}
+
+.startbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+#start {
+    background-color: white;
+    color: rgb(43, 42, 42);
+    text-align: center;
+    padding: 30px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+#question {
+    display: flex;
+    text-align: center;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#options button {
+    display: block;
+    padding: 12px;
+    width: 25%;
+    margin-top: 8px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+#options button:hover {
+    cursor: pointer;
+    padding: 15px;
+}
+
+#highscore {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+#score {
+    padding: 0px 0px 50px 0px;
+}
+
+#submit {
+    background-color: white;
+    color: rgb(43, 42, 42);
+    text-align: center;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+#submit:hover {
+    cursor: pointer;
+}
+
+input:focus {
+    border: 3px solid #555;
+}
+
+#highscore-input {
+    font-size: 30px;
+}
+
+#home {
+    background-color: white;
+    color: rgb(43, 42, 42);
+    text-align: center;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+#home:hover {
+    cursor: pointer;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+#high-scores:hover {
+    cursor: pointer;
+}
+
+#initials {
+    padding: 9px;
+    font-size: 20px;
+    border-radius: 4px;
 }

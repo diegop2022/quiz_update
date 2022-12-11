@@ -12,6 +12,7 @@ endscore = document.getElementById("score");
 initials = document.getElementById("initials");
 submit = document.getElementById("submit");
 home = document.getElementById("home");
+mainPage = document.getElementById("startbtn")
 
 question.style.display = 'none';
 option1.style.display = 'none';
@@ -20,7 +21,6 @@ option3.style.display = 'none';
 option4.style.display = 'none';
 highscore.style.display = 'none';
 home.style.display = 'none';
-
 
 //Reloads the page when time runs out
 failed = () => {
@@ -62,11 +62,11 @@ start.addEventListener("click", () => {
     score = 0;
     start.style.display = 'none';
     startTimer();
-    question.innerHTML = "question"
-    option1.innerHTML = "test"
-    option2.innerHTML = "test"
-    option3.innerHTML = "test"
-    option4.innerHTML = "test"
+    question.innerHTML = "Which five colours make up the Olympic rings?"
+    option1.innerHTML = "Purple, yellow, black, green and red"
+    option2.innerHTML = "Blue, yellow, black, green and red"
+    option3.innerHTML = "Blue, yellow, white, green and red"
+    option4.innerHTML = "Blue, organge, white, green and red"
 
     option1.addEventListener("click", () => {
         if (score == 0) {
@@ -93,11 +93,11 @@ start.addEventListener("click", () => {
 
 //Display Question 2
 question2 = () => {
-    question.innerHTML = "question2"
-    option1.innerHTML = "test2"
-    option2.innerHTML = "test2"
-    option3.innerHTML = "test2"
-    option4.innerHTML = "test2"
+    question.innerHTML = "What is the biggest animal in the world?"
+    option1.innerHTML = "Kodiak bear"
+    option2.innerHTML = "Lion"
+    option3.innerHTML = "Blue whale"
+    option4.innerHTML = "Elephant"
 
     option1.addEventListener("click", () => {
         if (score == 1) {
@@ -124,11 +124,11 @@ question2 = () => {
 
 //Display Question 3
 question3 = () => {
-    question.innerHTML = "question3"
-    option1.innerHTML = "test3"
-    option2.innerHTML = "test3"
-    option3.innerHTML = "test3"
-    option4.innerHTML = "test3"
+    question.innerHTML = "Which is the closest planet to the sun?"
+    option1.innerHTML = "Mars"
+    option2.innerHTML = "Earth"
+    option3.innerHTML = "Neptune"
+    option4.innerHTML = "Mercury"
 
     option1.addEventListener("click", () => {
         if (score == 2) {
@@ -155,11 +155,11 @@ question3 = () => {
 
 //Display Question 4
 question4 = () => {
-    question.innerHTML = "question4"
-    option1.innerHTML = "test4"
-    option2.innerHTML = "test4"
-    option3.innerHTML = "test4"
-    option4.innerHTML = "test4"
+    question.innerHTML = "How many valves does the heart have?"
+    option1.innerHTML = "1"
+    option2.innerHTML = "2"
+    option3.innerHTML = "3"
+    option4.innerHTML = "4"
 
     option1.addEventListener("click", () => {
         if (score == 3) {
@@ -185,10 +185,13 @@ question4 = () => {
     });
 }
 
+
+//Stores highscores in local storage from highest to lowest
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 console.log(highScores);
 const max_high_scores = 4;
 highscoreEntry = () => {
+    mainPage.style.display = 'none';
     timetitle.style.display = 'none';
     timer.style.display = 'none';
     question.style.display = 'none';
@@ -216,29 +219,36 @@ highscoreEntry = () => {
     })
 }
 
+//Displays highscore screen
 highscoreDisplay = () => {
     highscore.style.display = 'none';
     home.style.display = 'block';
+    highscores.style.display = 'block';
+    mainPage.style.display = 'none';
 
     if (highScores[0]) {
         option1.style.display = 'block';
+        option1.innerHTML = highScores[0].name + " " + highScores[0].score
     }
     if (highScores[1]) {
         option2.style.display = 'block';
+        option2.innerHTML = highScores[1].name + " " + highScores[1].score
     }
     if (highScores[2]) {
         option3.style.display = 'block';
+        option3.innerHTML = highScores[2].name + " " + highScores[2].score
     }
     if (highScores[3]) {
         option4.style.display = 'block';
+        option4.innerHTML = highScores[3].name + " " + highScores[3].score
     }
-
-    option1.innerHTML = highScores[0].name + " " + highScores[0].score
-    option2.innerHTML = highScores[1].name + " " + highScores[1].score
-    option3.innerHTML = highScores[2].name + " " + highScores[2].score
-    option4.innerHTML = highScores[3].name + " " + highScores[3].score
 
     home.addEventListener("click", () => {
         location.reload();
     })
 }
+
+//Displays highscore screen when "high scores" is clicked
+highscores.addEventListener("click", () => {
+    highscoreDisplay();
+})
