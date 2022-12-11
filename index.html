@@ -6,23 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <h1 id="high-scores">High Scores</h1>
-    <h1>Time:</h1>
-    <h1 id="timer"></h1>
+    <header>
+        <h1 id="high-scores">High Scores</h1>
+        <h1 id="time">Time:</h1>
+        <h1 id="timer"></h1>
+    </header>
 
+    <main>
+        <section id="questions">
+            <h1 id="question"></h1>
+            <button id="option1"></button>
+            <button id="option2"></button>
+            <button id="option3"></button>
+            <button id="option4"></button>
+        </section>
 
-    <section id="questions">
-        <h1 id="question"></h1>
-        <button id="option1"></button>
-        <button id="option2"></button>
-        <button id="option3"></button>
-        <button id="option4"></button>
-    </section>
+        <button id="start">Start Quiz</button>
 
-    <button id="start">Start Quiz</button>
+        <section id="highscore">
+            <h1>Your score was: </h1>
+            <h1 id="score"></h1>
+            <label>Initials</label>
+            <input type="text" id="initials">
+            <button id="submit">Submit</button>
+        </section>
+
+        <button id="home">Return Home</button>
+    </main>
 
     <footer>
         <h2>Made by Diego Pena</h2>
